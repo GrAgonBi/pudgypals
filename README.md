@@ -51,6 +51,7 @@ This app would include the following list of features:
 - Server libraries:
   - knex
   - express
+  - bcrypt for password hashing
 
 ### APIs
 
@@ -60,7 +61,7 @@ This app would include the following list of features:
 
 ![](src/proposal_assets/sitemap.png)
 
-### Mockups
+### Mockup Wireframes
 
 ![](src/proposal_assets/mockups.png)
 
@@ -70,7 +71,176 @@ This app would include the following list of features:
 
 ### Endpoints
 
-List endpoints that your server will implement, including HTTP methods, parameters, and example responses.
+#### User Authentication
+
+Register User
+
+- Endpoint: `POST /api/auth/register`
+- Parameters:
+  - `username` (string): Username of the user.
+  - `password` (string): Password of the user.
+  - `email` (string): Email address of the user.
+- Response:
+  - Status Code:
+    - 201 Created: User registered successfully.
+    - 400 Bad Request: Invalid request parameters.
+- Example Response Body:
+
+```json
+{
+  "token": "seyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6I..."
+}
+```
+
+Login User
+
+- Endpoint: `POST /api/auth/login`
+- Parameters:
+  - `username` (string): Username of the user.
+  - `password` (string): Password of the user.
+- Response:
+  - Status Code:
+    - 200 OK: User logged in successfully.
+    - 401 Unauthorized: Invalid credentials.
+- Example Response Body:
+
+```json
+{
+  "token": "seyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6I..."
+}
+```
+
+#### Weight Records
+
+Add Weight Record
+
+- Endpoint: `POST /api/weight`
+- Parameters:
+  - `weight` (decimal): Weight value.
+  - `date` (string): Date of the weight record.
+- Response:
+  - Status Code:
+    - 201 Created: Weight record inserted successfully.
+    - 400 Bad Request: Invalid request parameters.
+- Example Response Body:
+
+```json
+{
+  "message": "Weight record inserted successfully."
+}
+```
+
+Get All Weight Records
+
+- Endpoint: `GET /api/weight`
+- Response:
+  - Status Code:
+    - 200 OK: Weight records retrieved successfully.
+    - 404 Not Found: No weight records found.
+- Example Response Body:
+
+```json
+[
+  {
+    "id": "1",
+    "weight": 154.3,
+    "date": "2024-03-18"
+  },
+  {
+    "id": "2",
+    "weight": 152.1,
+    "date": "2024-03-17"
+  }
+  ...
+]
+```
+
+Get Last Seven Days Weight Records
+
+- Endpoint: `GET /api/weight/lastSevenDays`
+- Response:
+  - Status Code:
+    - 200 OK: Last seven days weight records retrieved successfully.
+    - 404 Not Found: No weight records found.
+- Example Response Body:
+
+```json
+[
+  {
+    "date": "2024-03-11",
+    "weight": 154.3
+  },
+  {
+    "date": "2024-03-12",
+    "weight": 152.1
+  },
+  ...
+]
+```
+
+Get Last Thirty Days Weight Records
+
+- Endpoint: `GET /api/weight/lastThirtyDays`
+- Response:
+  - Status Code:
+    - 200 OK: Last thirty days weight records retrieved successfully.
+    - 404 Not Found: No weight records found.
+- Example Response Body:
+
+```json
+[
+  {
+    "date": "2024-03-11",
+    "weight": 154.3
+  },
+  {
+    "date": "2024-03-12",
+    "weight": 152.1
+  },
+  ...
+]
+```
+
+#### User Profile
+
+Get User Profile
+
+- Endpoint: `GET /api/user`
+- Response:
+  - Status Code:
+    - 200 OK: User profile retrieved successfully.
+    - 404 Not Found: User profile not found.
+- Example Response Body:
+
+```json
+{
+  "username": "example_user",
+  "email": "example@example.com",
+  "height": 170,
+  "initialWeight": 165.3,
+  "targetWeight": 154.3
+}
+```
+
+Update User Profile
+
+- Endpoint: `PUT /api/user`
+- Parameters:
+  - `height` (decimal): Updated height value.
+  - `initialWeight` (decimal): Updated initial weight value.
+  - `targetWeight` (decimal): Updated target weight value.
+- Response:
+  - Status Code:
+    - 204 No Content: User profile updated successfully.
+    - 404 Not Found: User profile not found.
+
+Delete User Account
+
+- Endpoint: `DELETE /api/user`
+- Response:
+  - Status Code:
+    - 204 No Content: User account deleted successfully.
+    - 404 Not Found: User account not found.
 
 ### Auth
 
@@ -83,3 +253,7 @@ Scope your project as a sprint. Break down the tasks that will need to be comple
 ## Nice-to-haves
 
 Your project will be marked based on what you committed to in the above document. Under nice-to-haves, you can list any additional features you may complete if you have extra time, or after finishing.
+
+```
+
+```
