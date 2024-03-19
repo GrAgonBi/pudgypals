@@ -244,16 +244,39 @@ Delete User Account
 
 ### Auth
 
-Does your project include any login or user profile functionality? If so, describe how authentication/authorization will be implemented.
+- JWT auth
+  - Store JWT in sessionStorage, remove when a user logs out or account deleted
+  - User will be directed to the Homepage once logged in
 
 ## Roadmap
 
-Scope your project as a sprint. Break down the tasks that will need to be completed and map out timeframes for implementation. Think about what you can reasonably complete before the due date. The more detail you provide, the easier it will be to build.
+### Sprint 1
+
+- client
+  - create react project with routes and boilerplate pages
+  - Signin/Login Page, InitialRecord Page, Home/Progress Page, Profile Page
+  - AddWeight Modal, DeleteAccount Modal
+- server
+  - express project with routing, with placeholder 200 responses
+  - using knex, connect to database, create migrations and seeds with sample data
+  - create all the endpoints and testing using postman/thunder client
+
+### Sprint 2
+
+- client
+  - complete Signin/Login Page, InitialRecord Page, Home/Progress Page, Profile Page
+  - complete AddWeight Modal, DeleteAccount Modal
+  - connecting frontend to the backend server
+- server
+  - add extra endpoints/HTTP methods if necessary
+
+### Sprint 3
+
+- Testing and Deployment
 
 ## Nice-to-haves
 
-Your project will be marked based on what you committed to in the above document. Under nice-to-haves, you can list any additional features you may complete if you have extra time, or after finishing.
-
-```
-
-```
+- User will have the option to sign up with their gmail account
+- Current units is fixed to cm and lbs, will have more choices to change to inches and kg
+- Reminders and Notifications to log weight regularly
+- The ability to add short notes to weight entries (e.g., "Started new excercise routine") and have it displayed to the user
