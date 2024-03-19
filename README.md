@@ -8,7 +8,7 @@ An app allows users to monitor their weight progress, set goals, and record dail
 
 ### Problem
 
-Obesity is a problem that many people face now, including myself. Making the decision to lose weight is not easy in itself. Most apps on the market are often integrated with various functions that can be overwhelming and seem overly complicated. This can make losing weight seem like an even more daunting task. Therefore, I decided to create PudgePals. PudgePals is a simple and straightforward app that is designed solely for tracking weight changes. This will make it easier for people to take the first step towards their weight loss goals.
+Obesity is a problem that many people face now, including myself. Making the decision to lose weight is not easy in itself. Most apps on the market are often integrated with various functions that can be overwhelming and seem overly complicated. This can make losing weight seem like an even more daunting task. Therefore, I decided to create PudgyPals. PudgyPals is a simple and straightforward app that is designed solely for tracking weight changes. This will make it easier for people to take the first step towards their weight loss goals.
 
 ### User Profile
 
