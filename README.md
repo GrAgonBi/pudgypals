@@ -1,42 +1,72 @@
 # Project Title
 
+PudgyPals
+
 ## Overview
 
-An app related to pet industry: maybe adoption or food/nuritiens?
+An app allows users to monitor their weight progress, set goals, and record daily weights, providing insights and trends over time
 
 ### Problem
 
-Why is your app needed? Background information around any pain points or other reasons.
+Obesity is a problem that many people face now, including myself. Making the decision to lose weight is not easy in itself. Most apps on the market are often integrated with various functions that can be overwhelming and seem overly complicated. This can make losing weight seem like an even more daunting task. Therefore, I decided to create PudgePals. PudgePals is a simple and straightforward app that is designed solely for tracking weight changes. This will make it easier for people to take the first step towards their weight loss goals.
 
 ### User Profile
 
-Who will use your app? How will they use it? Any special considerations that your app must take into account.
+#### Who will use it?
+
+- People looking to lose weight or manage their weight.
+- Individuals who are self-motivated and want a simple tool to track progress.
+- People who find other weight loss apps overwhelming or complex.
+- Users who may be discouraged by the difficulty of weight loss and need a clear starting point.
+
+#### How will they use it?
+
+- Regularly log their weight to monitor changes over time.
+- See a clear and simple record of their weight loss journey.
+- Track progress without the distraction of additional features.
+- Focus on the core goal of weight management without feeling overwhelmed.
 
 ### Features
 
-List the functionality that your app will include. These can be written as user stories or descriptions with related details. Do not describe _how_ these features are implemented, only _what_ needs to be implemented.
+This app would include the following list of features:
+
+- **User accounts:** users are able to create an accoutn and log in securesly using emal and password.
+- **Weight tracking:** users can easily enter their weight with a date.
+- **Goal setting:** users can set achievable weight loss goals whithin the app.
+- **Data visualization:** provide a clear visualization representation of weight changes over time.
 
 ## Implementation
 
 ### Tech Stack
 
-List technologies that will be used in your app, including any libraries to save time or provide more functionality. Be sure to research any potential limitations.
+- React
+- MySQL
+- Express
+- Client libraries:
+  - react
+  - react-router
+  - react-datepicker
+  - react-Chartjs-2
+  - axios
+- Server libraries:
+  - knex
+  - express
 
 ### APIs
 
-List any external sources of data that will be used in your app.
+- No external APIs will be used for the first sprint
 
 ### Sitemap
 
-List the pages of your app with brief descriptions. You can show this visually, or write it out.
+![](src/proposal_assets/sitemap.png)
 
 ### Mockups
 
-Provide visuals of your app's screens. You can use tools like Figma or pictures of hand-drawn sketches.
+![](src/proposal_assets/mockups.png)
 
 ### Data
 
-Describe your data and the relationships between them. You can show this visually using diagrams, or write it out.
+![](src/proposal_assets/data.png)
 
 ### Endpoints
 
