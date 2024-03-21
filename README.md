@@ -203,6 +203,18 @@ Get Last Thirty Days Weight Records
 
 #### User Profile
 
+Create User Profile
+
+- Endpoint: `POST /api/user`
+  - `height` (decimal): height value.
+  - `initialWeight` (decimal): initial weight value.
+  - `targetWeight` (decimal): target weight value.
+  - `targetDate` (date): target date.
+- Response:
+  -Status Code:
+  - 201 Created: User profile created successfully.
+  - 400 Bad Request: Invalid request parameters.
+
 Get User Profile
 
 - Endpoint: `GET /api/user`
