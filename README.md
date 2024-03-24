@@ -208,6 +208,7 @@ Create User Profile
 - Endpoint: `POST /api/user`
   - `height` (decimal): height value.
   - `initialWeight` (decimal): initial weight value.
+  - `initialDate` (date): initial date.
   - `targetWeight` (decimal): target weight value.
   - `targetDate` (date): target date.
 - Response:
@@ -230,7 +231,9 @@ Get User Profile
   "email": "example@example.com",
   "height": 170,
   "initialWeight": 165.3,
-  "targetWeight": 154.3
+  "initialDate": "2024-02-18",
+  "targetWeight": 154.3,
+  "targetDate": "2024-04-28"
 }
 ```
 
@@ -241,6 +244,7 @@ Update User Profile
   - `height` (decimal): Updated height value.
   - `initialWeight` (decimal): Updated initial weight value.
   - `targetWeight` (decimal): Updated target weight value.
+  -
 - Response:
   - Status Code:
     - 204 No Content: User profile updated successfully.
