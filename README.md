@@ -114,7 +114,7 @@ Login User
 
 Add Weight Record
 
-- Endpoint: `POST /api/weight`
+- Endpoint: `POST /api/weight/add`
 - Parameters:
   - `weight` (decimal): Weight value.
 - Response:
