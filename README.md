@@ -244,7 +244,7 @@ Update User Profile
   - `height` (decimal): Updated height value.
   - `initialWeight` (decimal): Updated initial weight value.
   - `targetWeight` (decimal): Updated target weight value.
-  -
+  - `targetDate` (date): Updated target date.
 - Response:
   - Status Code:
     - 204 No Content: User profile updated successfully.
