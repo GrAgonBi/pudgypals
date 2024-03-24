@@ -117,7 +117,6 @@ Add Weight Record
 - Endpoint: `POST /api/weight`
 - Parameters:
   - `weight` (decimal): Weight value.
-  - `date` (string): Date of the weight record.
 - Response:
   - Status Code:
     - 201 Created: Weight record inserted successfully.
@@ -132,7 +131,7 @@ Add Weight Record
 
 Get All Weight Records
 
-- Endpoint: `GET /api/weight`
+- Endpoint: `GET /api/weight/all`
 - Response:
   - Status Code:
     - 200 OK: Weight records retrieved successfully.
@@ -157,7 +156,7 @@ Get All Weight Records
 
 Get Last Seven Days Weight Records
 
-- Endpoint: `GET /api/weight/lastSevenDays`
+- Endpoint: `GET /api/weight/past7days`
 - Response:
   - Status Code:
     - 200 OK: Last seven days weight records retrieved successfully.
@@ -180,7 +179,7 @@ Get Last Seven Days Weight Records
 
 Get Last Thirty Days Weight Records
 
-- Endpoint: `GET /api/weight/lastThirtyDays`
+- Endpoint: `GET /api/weight/past30days`
 - Response:
   - Status Code:
     - 200 OK: Last thirty days weight records retrieved successfully.
@@ -229,11 +228,11 @@ Get User Profile
 {
   "username": "example_user",
   "email": "example@example.com",
-  "height": 170,
-  "initialWeight": 165.3,
-  "initialDate": "2024-02-18",
-  "targetWeight": 154.3,
-  "targetDate": "2024-04-28"
+  "height": 180,
+  "initialWeight": 180,
+  "initialDate": "2024-01-20",
+  "targetWeight": 155,
+  "targetDate": "2024-04-30"
 }
 ```
 
@@ -241,8 +240,6 @@ Update User Profile
 
 - Endpoint: `PUT /api/user`
 - Parameters:
-  - `height` (decimal): Updated height value.
-  - `initialWeight` (decimal): Updated initial weight value.
   - `targetWeight` (decimal): Updated target weight value.
   - `targetDate` (date): Updated target date.
 - Response:
