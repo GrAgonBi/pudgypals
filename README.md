@@ -59,15 +59,15 @@ This app would include the following list of features:
 
 ### Sitemap
 
-![](src/proposal_assets/sitemap.png)
+![](src/assets/proposal_assets/sitemap.png)
 
 ### Mockup Wireframes
 
-![](src/proposal_assets/mockups.png)
+![](src/assets/proposal_assets/mockups.png)
 
 ### Data
 
-![](src/proposal_assets/data.png)
+![](src/assets/proposal_assets/data.png)
 
 ### Endpoints
 

@@ -1,0 +1,31 @@
+@font-face {
+  font-family: Titillium;
+  src: url(../../assets/fonts/TitilliumWeb-Regular.ttf) format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Titillium;
+  src: url(../../assets/fonts/TitilliumWeb-SemiBold.ttf) format("truetype");
+  font-weight: 600;
+}
+
+h1 {
+  @include pageHeader;
+}
+
+h2 {
+  @include subheader;
+}
+
+h3,
+label,
+a,
+button {
+  @include label-link-button;
+}
+
+p,
+span {
+  @include bodyCopy;
+}
