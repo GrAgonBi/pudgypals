@@ -9,9 +9,19 @@
     margin-bottom: 1rem;
   }
 
+  &__message {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  .shake {
+    animation: shake 0.3s ease-in-out;
+  }
+
   &__button {
     width: 100%;
-    margin: 1rem 0;
+    margin: 0.5rem 0;
+    margin-bottom: 1rem;
   }
 
   &__text {

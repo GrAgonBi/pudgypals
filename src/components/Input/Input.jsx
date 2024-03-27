@@ -1,10 +1,10 @@
 import "./Input.scss";
 
-function Input({ name, type, label }) {
+function Input({ name, type, label, className }) {
   return (
     <div className="field">
-      <label className="field__label">{label}</label>
-      <input type={type} name={name} className="field__input" />
+      <label className="field__label">{label}*</label>
+      <input type={type} name={name} className={className} />
     </div>
   );
 }

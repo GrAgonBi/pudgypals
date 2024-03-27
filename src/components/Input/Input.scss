@@ -11,8 +11,21 @@
   &__input {
     border: 1px solid $silver;
     border-radius: 0.5rem;
-    padding: 0.5rem;
+    padding: 0.25rem 0.5rem;
     font-size: inherit;
     margin-bottom: 0.5rem;
+
+    &--error {
+      @extend .field__input;
+      border: 2px solid $primary-darker;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-visible {
+      border: 1px solid $primary-dark;
+    }
   }
 }
