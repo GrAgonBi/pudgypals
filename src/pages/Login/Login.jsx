@@ -16,12 +16,13 @@ function Login() {
     setShakeMessage(false);
     try {
       const response = await axios.post(`${baseUrl}/auth/login`, {
-        username: e.target.username.value,
+        email: e.target.email.value,
         password: e.target.password.value,
       });
       sessionStorage.setItem("token", response.data.token);
       navigate("/progress");
     } catch (error) {
+      // console.log(error);
       setError(error.response.data);
       setShakeMessage(true);
     }
@@ -32,6 +33,11 @@ function Login() {
       <section className="login">
         <h1 className="login__title">Login to Your Account</h1>
         <form className="login__form" onSubmit={handleSubmit}>
+          {error && (
+            <div className={`login__message ${shakeMessage && "shake"}`}>
+              !! {error}
+            </div>
+          )}
           <Input
             name="email"
             type="text"
@@ -56,17 +62,12 @@ function Login() {
                 : ""
             }`}
           />
-
-          {error && (
-            <div className={`register__message ${shakeMessage && "shake"}`}>
-              !! {error}
-            </div>
-          )}
-          <button className="register__button">Login</button>
+          <div className="login__note">Note: any field with * is required.</div>
+          <button className="login__button">Login</button>
         </form>
-        <h2 className="register__text">
+        <h2 className="login__text">
           Do not have an account yet?
-          <Link to="/register" className="register__link">
+          <Link to="/register" className="login__link">
             Register Here
           </Link>
         </h2>

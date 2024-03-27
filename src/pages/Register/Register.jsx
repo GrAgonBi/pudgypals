@@ -77,7 +77,6 @@ function Register() {
           <div className="register__note">
             Note: any field with * is required.
           </div>
-
           <button className="register__button">Sign up</button>
         </form>
         <h2 className="register__text">
