@@ -5,6 +5,7 @@ import InitialSetup from "./pages/InitialSetup/InitialSetup";
 import Progress from "./components/Progress/Progress";
 import Profile from "./components/Profile/Profile";
 import UserPage from "./pages/UserPage/UserPage";
+import AddWeight from "./pages/AddWeight/AddWeight";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="progress" element={<Progress />} />
             <Route path="profile" element={<Profile />} />
           </Route>
+          <Route path="/addWeight" element={<AddWeight />} />
           <Route path="/*" element={<Navigate to="/login" />} />
         </Routes>
       </BrowserRouter>

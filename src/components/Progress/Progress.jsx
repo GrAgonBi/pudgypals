@@ -5,22 +5,25 @@ import LineGraph from "../LineGraph/LineGraph";
 import { baseUrl } from "../../helper";
 import { useNavigate } from "react-router";
 import { useEffect, useState } from "react";
+import { getTodayDate } from "../../helper";
 
 function Progress() {
+  const [user, setUser] = useState(null);
   const [error, setError] = useState(false);
   const [allWeights, setAllWeights] = useState(null);
   const [past30daysWeights, setPast30daysWeights] = useState(null);
   const [selectedPeriod, setSelectedPeriod] = useState("last7days");
   const [pastWeekWeights, setPastWeekWeights] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [notification, setNotification] = useState(false);
 
   const navigate = useNavigate();
 
   const fetchData = async () => {
     try {
-      // const fetchUser = axios.get(`${baseUrl}/user`, {
-      //   headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` },
-      // });
+      const fetchUser = axios.get(`${baseUrl}/user`, {
+        headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` },
+      });
       const fetchAllWeights = axios.get(`${baseUrl}/weight/all`, {
         headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` },
       });
@@ -32,16 +35,27 @@ function Progress() {
       });
 
       const [
+        userResponse,
         allWeightsResponse,
         past30daysWeightsResponse,
         past7daysWeightsResponse,
       ] = await Promise.all([
-        // fetchUser,
+        fetchUser,
         fetchAllWeights,
         fetchPast30daysWeights,
         fetchPast7daysWeights,
       ]);
 
+      if (
+        userResponse?.data &&
+        !allWeightsResponse?.data[
+          allWeightsResponse.data.length - 1
+        ]?.date.includes(getTodayDate())
+      ) {
+        setNotification(true);
+      }
+
+      setUser(userResponse.data);
       setAllWeights(allWeightsResponse.data);
       setPast30daysWeights(past30daysWeightsResponse.data);
       setPastWeekWeights(past7daysWeightsResponse.data);
@@ -88,6 +102,17 @@ function Progress() {
               ? "Opps! It seems like you haven't logged in yet"
               : error
           }`}
+        </Modal>
+      )}
+      {notification && (
+        <Modal
+          buttonText="Record now"
+          handleClick={() => navigate("/addWeight")}
+          handleCancel={() => {
+            setNotification(false);
+          }}
+        >
+          Want to record today's weight?
         </Modal>
       )}
 

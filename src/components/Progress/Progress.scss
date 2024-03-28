@@ -4,7 +4,7 @@
 .progress {
   &__button {
     width: 100%;
-    margin-top: 2rem;
+    margin-top: 2.375rem;
   }
 }
 
@@ -35,8 +35,8 @@
   margin: 0 1rem;
   border-left: 2px solid $mercury;
   border-right: 2px solid $mercury;
+
   &__buttons {
-    // width: 100%;
     margin: 0 0.25rem;
     display: flex;
     justify-content: space-between;
