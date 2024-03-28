@@ -6,6 +6,7 @@ import { baseUrl } from "../../helper";
 import { useNavigate } from "react-router";
 import { useEffect, useState } from "react";
 import { getTodayDate } from "../../helper";
+import AddWeight from "../AddWeight/AddWeight";
 
 function Progress() {
   const [user, setUser] = useState(null);
@@ -16,6 +17,7 @@ function Progress() {
   const [pastWeekWeights, setPastWeekWeights] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [notification, setNotification] = useState(false);
+  const [addWeight, setAddWeight] = useState(false);
 
   const navigate = useNavigate();
 
@@ -106,8 +108,8 @@ function Progress() {
       )}
       {notification && (
         <Modal
-          buttonText="Record now"
-          handleClick={() => navigate("/addWeight")}
+          buttonText="Record"
+          handleClick={() => setAddWeight(true)}
           handleCancel={() => {
             setNotification(false);
           }}
@@ -201,7 +203,10 @@ function Progress() {
           </div>
         </section>
       </div>
-      <button className="progress__button">+ Add weight</button>
+      <button className="progress__button" onClick={() => setAddWeight(true)}>
+        + Add weight
+      </button>
+      {addWeight && <AddWeight setAddWeight={setAddWeight} />}
     </div>
   );
 }

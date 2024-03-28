@@ -61,7 +61,7 @@ function InitialSetup() {
           },
         }
       );
-      navigate("/user/rogress");
+      navigate("/user/progress");
     } catch (error) {
       console.log(error);
       setError(error.response.data);

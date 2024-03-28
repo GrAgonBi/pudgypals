@@ -38,7 +38,9 @@ function LineGraph({ weights, selectedPeriod }) {
     labels: weights.map((entry) => entry.date),
     datasets: [
       {
-        data: weights.map((entry) => entry.weight),
+        data: weights.map((entry) => {
+          return entry.weight;
+        }),
         borderColor: "#afafaf",
         fill: false,
         tension: 0.3,
