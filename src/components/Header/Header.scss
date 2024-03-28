@@ -1,0 +1,39 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__name {
+    display: flex;
+    align-items: center;
+    margin-left: -1rem;
+  }
+
+  &__logo {
+    width: 4rem;
+  }
+
+  &__logo-image {
+    width: 100%;
+  }
+
+  &__title {
+    margin-left: -0.75rem;
+  }
+
+  &__button {
+    color: $primary-dark;
+    background: none;
+    @include subheader;
+    font-family: inherit;
+
+    &:hover {
+      background: none;
+      color: $primary-darker;
+      text-decoration: underline;
+    }
+  }
+}

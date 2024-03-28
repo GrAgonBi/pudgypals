@@ -1,5 +1,6 @@
 @use "./styles/typography" as *;
-@use "./styles//variables" as *;
+@use "./styles/variables" as *;
+@use "./styles/mixins" as *;
 
 body {
   *,
@@ -20,12 +21,14 @@ body {
 
   max-width: 23.438rem;
   padding: 0 1.5rem;
+  padding-bottom: 2rem;
   margin: 0 auto;
 
   border: 1px solid $primary-dark;
   border-radius: 0.5rem;
   color: $primary-dark;
   min-height: 35rem;
+  position: relative;
 }
 
 ul {
@@ -44,6 +47,12 @@ img {
 
 input {
   height: 2.25rem;
+  border: 1px solid $silver;
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
 }
 
 button {
@@ -52,6 +61,7 @@ button {
   color: $alabaster;
   border-radius: 0.5rem;
   height: 2.25rem;
+  padding: 0 0.5rem;
   cursor: pointer;
 
   &:hover {

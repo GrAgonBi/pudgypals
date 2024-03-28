@@ -1,1 +1,50 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
 
+.summary {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+
+  &__item {
+    border: 1px solid $primary-dark;
+    text-align: center;
+    width: 6rem;
+    padding: 0.25rem;
+    border-radius: 1rem;
+  }
+}
+
+.chart-wrapper {
+  background-color: $alabaster;
+  margin-top: 1.5rem;
+  // padding: 1rem;
+}
+
+.chart-container {
+  margin: 0 1rem;
+  border-left: 2px solid $mercury;
+  border-right: 2px solid $mercury;
+  &__buttons {
+    // width: 100%;
+    margin: 0 0.25rem;
+    display: flex;
+    justify-content: space-between;
+
+    // margin-left: 3.75rem;
+    // margin-right: 0.45rem;
+  }
+
+  &__button {
+    background: none;
+    color: $primary-dark;
+    margin-bottom: 1rem;
+
+    &--active {
+      background: $mercury;
+    }
+    &:hover {
+      background: $mercury;
+    }
+  }
+}

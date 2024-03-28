@@ -1,6 +1,6 @@
 import "./Register.scss";
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { baseUrl } from "../../helper";
 import axios from "axios";
 import LandingLogo from "../../components/LandingLogo/LandingLogo";
@@ -9,6 +9,10 @@ import Input from "../../components/Input/Input";
 function Register() {
   const [error, setError] = useState(null);
   const [shakeMessage, setShakeMessage] = useState(false);
+
+  useEffect(() => {
+    sessionStorage.clear();
+  }, []);
 
   const navigate = useNavigate();
   const handleSubmit = async (e) => {

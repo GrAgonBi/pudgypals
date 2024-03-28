@@ -1,6 +1,6 @@
 import "./Login.scss";
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { baseUrl } from "../../helper";
 import axios from "axios";
 import LandingLogo from "../../components/LandingLogo/LandingLogo";
@@ -9,6 +9,10 @@ import Input from "../../components/Input/Input";
 function Login() {
   const [error, setError] = useState(null);
   const [shakeMessage, setShakeMessage] = useState(false);
+
+  useEffect(() => {
+    sessionStorage.clear();
+  }, []);
 
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
@@ -67,7 +71,7 @@ function Login() {
         </form>
         <h2 className="login__text">
           Do not have an account yet?
-          <Link to="/register" className="login__link">
+          <Link to="/" className="login__link">
             Register Here
           </Link>
         </h2>
