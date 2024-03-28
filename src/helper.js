@@ -27,11 +27,11 @@ export function formatYeardate(str) {
 }
 
 export function generateDateArray(weights) {
-  const targetLength = 7;
+  // const targetLength = 7;
   const weightsLength = weights.length;
 
   // 如果weights长度不超过7，则无需修改
-  if (weightsLength <= targetLength) {
+  if (weightsLength <= 2) {
     return weights.map((entry) => entry.date);
   }
 

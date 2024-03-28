@@ -1,13 +1,21 @@
 @use "../../styles/variables" as *;
 @use "../../styles/mixins" as *;
 
+.progress {
+  &__button {
+    width: 100%;
+    margin-top: 2rem;
+  }
+}
+
 .summary {
   display: flex;
   justify-content: space-between;
   margin: 1rem 0;
 
   &__item {
-    border: 1px solid $primary-dark;
+    // border: 1px solid $silver;
+    box-shadow: 0 0.25rem 0.5rem rgba(89, 89, 89, 0.2);
     text-align: center;
     width: 6rem;
     padding: 0.25rem;
@@ -17,8 +25,10 @@
 
 .chart-wrapper {
   background-color: $alabaster;
-  margin-top: 1.5rem;
-  // padding: 1rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(89, 89, 89, 0.2);
+  margin-top: 2.5rem;
+  border-radius: 0.5rem;
+  padding: 0.25rem 0;
 }
 
 .chart-container {

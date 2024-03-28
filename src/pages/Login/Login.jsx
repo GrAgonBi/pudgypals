@@ -24,7 +24,7 @@ function Login() {
         password: e.target.password.value,
       });
       sessionStorage.setItem("token", response.data.token);
-      navigate("/progress");
+      navigate("/user/progress");
     } catch (error) {
       // console.log(error);
       setError(error.response.data);

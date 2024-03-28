@@ -1,14 +1,12 @@
 import "./Progress.scss";
-import LineGraph from "../../components/LineGraph/LineGraph";
-import { useEffect, useState } from "react";
 import axios from "axios";
+import Modal from "../Modal/Modal";
+import LineGraph from "../LineGraph/LineGraph";
 import { baseUrl } from "../../helper";
-import Header from "../../components/Header/Header";
-import Modal from "../../components/Modal/Modal";
 import { useNavigate } from "react-router";
+import { useEffect, useState } from "react";
 
 function Progress() {
-  const [user, setUser] = useState(null);
   const [error, setError] = useState(false);
   const [allWeights, setAllWeights] = useState(null);
   const [past30daysWeights, setPast30daysWeights] = useState(null);
@@ -20,9 +18,9 @@ function Progress() {
 
   const fetchData = async () => {
     try {
-      const fetchUser = axios.get(`${baseUrl}/user`, {
-        headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` },
-      });
+      // const fetchUser = axios.get(`${baseUrl}/user`, {
+      //   headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` },
+      // });
       const fetchAllWeights = axios.get(`${baseUrl}/weight/all`, {
         headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` },
       });
@@ -34,22 +32,19 @@ function Progress() {
       });
 
       const [
-        userResponse,
         allWeightsResponse,
         past30daysWeightsResponse,
         past7daysWeightsResponse,
       ] = await Promise.all([
-        fetchUser,
+        // fetchUser,
         fetchAllWeights,
         fetchPast30daysWeights,
         fetchPast7daysWeights,
       ]);
 
-      setUser(userResponse.data.username);
       setAllWeights(allWeightsResponse.data);
       setPast30daysWeights(past30daysWeightsResponse.data);
       setPastWeekWeights(past7daysWeightsResponse.data);
-      // setLabel(past30daysWeights.map((entry) => formatDate(entry.date)));
     } catch (error) {
       setError(error.response?.data || "An error occurred");
     } finally {
@@ -70,7 +65,7 @@ function Progress() {
   }
 
   return (
-    <div>
+    <div className="progress">
       {error && (
         <Modal
           handleClick={() =>
@@ -85,14 +80,17 @@ function Progress() {
           }
           handleCancel={() => navigate("/")}
         >
-          {`Opps! It seems like you haven't ${
+          {` ${
             error.toLowerCase().includes("profile")
-              ? "set up your initial profile yet"
-              : "logged in yet"
+              ? "Opps! It seems like you haven't set up your initial profile yet"
+              : error.toLowerCase().includes("required") ||
+                error.toLowerCase().includes("user")
+              ? "Opps! It seems like you haven't logged in yet"
+              : error
           }`}
         </Modal>
       )}
-      <Header user={user} />
+
       <section className="summary">
         <div className="summary__item">
           <h2 className="summary__value">
@@ -104,10 +102,13 @@ function Progress() {
         <div className="summary__item">
           <h2 className="summary__value">
             {pastWeekWeights?.length
-              ? (
-                  pastWeekWeights[pastWeekWeights.length - 1].weight -
-                  pastWeekWeights[0].weight
-                ).toFixed(2)
+              ? (() => {
+                  const difference = (
+                    pastWeekWeights[pastWeekWeights.length - 1].weight -
+                    pastWeekWeights[0].weight
+                  ).toFixed(2);
+                  return difference > 0 ? `+${difference}` : difference;
+                })()
               : 0}
             &nbsp; lb
           </h2>
@@ -116,10 +117,13 @@ function Progress() {
         <div className="summary__item">
           <h2 className="summary__value">
             {allWeights?.length
-              ? (
-                  allWeights[allWeights.length - 1].weight -
-                  allWeights[0].weight
-                ).toFixed(2)
+              ? (() => {
+                  const difference = (
+                    allWeights[allWeights.length - 1].weight -
+                    allWeights[0].weight
+                  ).toFixed(2);
+                  return difference > 0 ? `+${difference}` : difference;
+                })()
               : 0}
             &nbsp; lb
           </h2>
@@ -172,6 +176,7 @@ function Progress() {
           </div>
         </section>
       </div>
+      <button className="progress__button">+ Add weight</button>
     </div>
   );
 }

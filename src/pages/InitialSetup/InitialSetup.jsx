@@ -21,7 +21,7 @@ function InitialSetup() {
 
   const fetchUser = async () => {
     try {
-      const result = await axios.get(`${baseUrl}/auth/account`, {
+      await axios.get(`${baseUrl}/auth/account`, {
         headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` },
       });
       // console.log(result.data);
@@ -61,7 +61,7 @@ function InitialSetup() {
           },
         }
       );
-      navigate("/progress");
+      navigate("/user/rogress");
     } catch (error) {
       console.log(error);
       setError(error.response.data);
@@ -92,7 +92,7 @@ function InitialSetup() {
           }
           handleClick={
             error.toLowerCase().includes("profile")
-              ? () => navigate("/progress")
+              ? () => navigate("/user/progress")
               : () => setError(null)
           }
         >

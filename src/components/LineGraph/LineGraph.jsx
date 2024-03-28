@@ -3,8 +3,6 @@ import { Chart, registerables } from "chart.js/auto";
 import { Line } from "react-chartjs-2";
 import { formatDate, formatYeardate, generateDateArray } from "../../helper";
 
-import { useState } from "react";
-
 // Define a custom plugin to draw dashed line for x-axis border
 const dashedLinePlugin = {
   id: "dashedLinePlugin",
@@ -36,8 +34,6 @@ function LineGraph({ weights, selectedPeriod }) {
           selectedPeriod === "alltime" ? formatYeardate(date) : formatDate(date)
         );
 
-  // console.log(weights, selectedPeriod);
-  console.log(label);
   const data = {
     labels: weights.map((entry) => entry.date),
     datasets: [
@@ -53,18 +49,11 @@ function LineGraph({ weights, selectedPeriod }) {
   const options = {
     scales: {
       x: {
-        position: "top", // Display x-axis at the bottom
         grid: {
           display: false,
-          // borderDash: [5, 5],
         },
-        display: weights.length === 0 ? false : true,
-        title: {
-          display: false,
-          text: "Date",
-        },
+
         ticks: {
-          maxTicksLimit: weights.length > 7 ? 4 : undefined, // Set the maximum number of x-axis ticks to display}
           display: false,
         },
 
@@ -75,17 +64,20 @@ function LineGraph({ weights, selectedPeriod }) {
 
       y: {
         position: "right", // Display y-axis on the right
+
         grid: {
           display: false,
         },
+
         display: weights.length === 0 ? false : true,
+
         title: {
           display: false,
-          text: "Weight / lb",
         },
+
         ticks: {
           // Specify the desired number of ticks on the y-axis
-          stepSize: 5, // This will show ticks at an interval of 10
+          stepSize: 5, // This will show ticks at an interval of 5
         },
         border: {
           display: false,
@@ -101,9 +93,11 @@ function LineGraph({ weights, selectedPeriod }) {
 
   return (
     <section className="chart">
-      {/* {data.labels.length === 0 ? (
-        <div>No records for selected period</div>
-      ) : ( */}
+      {!label.length && (
+        <div className="chart__notice">
+          No records for the selected time interval
+        </div>
+      )}
       <div className="chart__labels">
         {label.map((date, index) => (
           <p className="chart__label" key={index}>

@@ -1,0 +1,20 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+
+  &__link {
+    text-align: center;
+    width: 80%;
+    padding: 1rem;
+    @include subheader;
+    border-radius: 0.5rem;
+
+    &:hover {
+      background-color: $silver;
+    }
+  }
+}
