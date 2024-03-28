@@ -10,7 +10,7 @@ function NumericInput({ value, setValue, label }) {
   };
 
   const handleInputChange = (e) => {
-    const newValue = Math.max(parseInt(e.target.value), 0);
+    const newValue = Math.max(Number(e.target.value), 0);
     if (!isNaN(newValue)) {
       setValue(newValue);
     }

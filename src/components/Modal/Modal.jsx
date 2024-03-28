@@ -11,7 +11,11 @@ function Modal({
     <div className="modal">
       <div className="modal__content">
         <h2>{children}</h2>
-        <div className="modal__buttons">
+        <div
+          className={`modal__buttons ${
+            !needAllButtons ? "modal__buttons--single" : ""
+          }`}
+        >
           {needAllButtons && (
             <button className="modal__button" onClick={handleCancel}>
               Cancel

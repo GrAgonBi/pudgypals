@@ -1,0 +1,70 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calendar {
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin-top: 20px;
+  padding: 0.25rem;
+  color: $primary-dark;
+}
+
+.react-calendar {
+  button {
+    pointer-events: none; // Disable pointer events to make the button unclickable
+  }
+
+  font-family: inherit;
+  width: 100%;
+  max-width: 300px;
+  border: none;
+  color: inherit;
+  background: none !important;
+
+  &__navigation {
+    margin-bottom: 0 !important;
+    &__arrow {
+      color: $primary-dark;
+    }
+
+    &__label {
+      color: $primary-dark;
+    }
+  }
+
+  &__month-view__weekdays__weekday {
+    font-weight: 600;
+  }
+
+  &__tile {
+    border-radius: 0.5rem !important;
+    padding: 0.5em;
+    color: inherit;
+  }
+
+  &__tile--active {
+    background-color: $silver !important;
+    color: white;
+    font-weight: 600;
+    pointer-events: all !important; // Disable pointer events to make the button unclickable
+
+    &:hover {
+      background-color: $primary-darker !important;
+    }
+    &:focus {
+      background-color: $silver !important;
+    }
+  }
+}
+
+abbr[title] {
+  text-decoration: none;
+}

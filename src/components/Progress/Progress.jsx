@@ -9,7 +9,8 @@ import { getTodayDate } from "../../helper";
 import AddWeight from "../AddWeight/AddWeight";
 
 function Progress() {
-  const [user, setUser] = useState(null);
+  // const [user, setUser] = useState(null);
+  const [trySubmit, setTrySubmit] = useState(false);
   const [error, setError] = useState(false);
   const [allWeights, setAllWeights] = useState(null);
   const [past30daysWeights, setPast30daysWeights] = useState(null);
@@ -57,7 +58,6 @@ function Progress() {
         setNotification(true);
       }
 
-      setUser(userResponse.data);
       setAllWeights(allWeightsResponse.data);
       setPast30daysWeights(past30daysWeightsResponse.data);
       setPastWeekWeights(past7daysWeightsResponse.data);
@@ -70,7 +70,7 @@ function Progress() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [trySubmit]);
 
   const handlePeriodChange = (period) => {
     setSelectedPeriod(period);
@@ -109,7 +109,10 @@ function Progress() {
       {notification && (
         <Modal
           buttonText="Record"
-          handleClick={() => setAddWeight(true)}
+          handleClick={() => {
+            setAddWeight(true);
+            setNotification(false);
+          }}
           handleCancel={() => {
             setNotification(false);
           }}
@@ -203,10 +206,18 @@ function Progress() {
           </div>
         </section>
       </div>
-      <button className="progress__button" onClick={() => setAddWeight(true)}>
+      <button
+        className="progress__button"
+        onClick={() => {
+          setAddWeight(true);
+          setNotification(false);
+        }}
+      >
         + Add weight
       </button>
-      {addWeight && <AddWeight setAddWeight={setAddWeight} />}
+      {addWeight && (
+        <AddWeight setAddWeight={setAddWeight} setTrySubmit={setTrySubmit} />
+      )}
     </div>
   );
 }

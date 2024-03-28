@@ -5,7 +5,6 @@ import InitialSetup from "./pages/InitialSetup/InitialSetup";
 import Progress from "./components/Progress/Progress";
 import Profile from "./components/Profile/Profile";
 import UserPage from "./pages/UserPage/UserPage";
-import AddWeight from "./components/AddWeight/AddWeight";
 
 function App() {
   return (

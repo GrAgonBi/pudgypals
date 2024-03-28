@@ -54,3 +54,10 @@ export function getTodayDate() {
   const day = String(today.getDate()).padStart(2, "0");
   return `${year}-${month}-${day}`;
 }
+
+export function transformToday(str) {
+  const year = str.getFullYear();
+  const month = String(str.getMonth() + 1).padStart(2, "0"); // Months are zero-indexed
+  const day = String(str.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}

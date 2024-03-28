@@ -50,7 +50,6 @@ function InitialSetup() {
   }, []);
 
   const handleSubmit = async () => {
-    console.log(initialWeight, height, initialDate, targetWeight, targetDate);
     try {
       await axios.post(
         `${baseUrl}/user`,
