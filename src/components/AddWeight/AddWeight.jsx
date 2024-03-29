@@ -1,6 +1,6 @@
 import CalendarInput from "../CalenderInput/CalenderInput";
 import "./AddWeight.scss";
-import { baseUrl, transformToday } from "../../helper";
+import { baseUrl } from "../../helper";
 import NumericInput from "../NumericInput/NumericInput";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -10,8 +10,7 @@ function AddWeight({ setAddWeight, setTrySubmit }) {
   const [weight, setWeight] = useState(0);
   const [error, setError] = useState(null);
   const today = new Date();
-  // console.log(today);
-  // console.log(transformToday(today));
+
   const handleCancel = () => {
     setAddWeight(false);
   };
@@ -32,9 +31,7 @@ function AddWeight({ setAddWeight, setTrySubmit }) {
       setAddWeight(false);
     } catch (error) {
       setError(error.response.data);
-      console.log(error);
     }
-    console.log(weight, transformToday(today));
   };
 
   useEffect(() => {
