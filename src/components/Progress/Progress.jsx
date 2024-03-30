@@ -102,7 +102,7 @@ function Progress() {
               : error.toLowerCase().includes("required") ||
                 error.toLowerCase().includes("user")
               ? "Opps! It seems like you haven't logged in yet"
-              : error
+              : "Error occurs, please try login."
           }`}
         </Modal>
       )}
@@ -160,61 +160,67 @@ function Progress() {
           <div className="summary__info">All time</div>
         </div>
       </section>
-      <div className="chart-wrapper">
-        <section className="chart-container">
-          <LineGraph
-            weights={
-              selectedPeriod === "last7days"
-                ? pastWeekWeights
-                : selectedPeriod === "last30days"
-                ? past30daysWeights
-                : allWeights
-            }
-            selectedPeriod={selectedPeriod}
-          />
-          <div className="chart-container__buttons">
-            <button
-              className={`chart-container__button ${
-                selectedPeriod === "last7days"
-                  ? "chart-container__button--active"
-                  : ""
-              }`}
-              onClick={() => handlePeriodChange("last7days")}
-            >
-              Last 7 days
-            </button>
-            <button
-              className={`chart-container__button ${
-                selectedPeriod === "last30days"
-                  ? "chart-container__button--active"
-                  : ""
-              }`}
-              onClick={() => handlePeriodChange("last30days")}
-            >
-              Last 30 days
-            </button>
-            <button
-              className={`chart-container__button ${
-                selectedPeriod === "alltime"
-                  ? "chart-container__button--active"
-                  : ""
-              }`}
-              onClick={() => handlePeriodChange("alltime")}
-            >
-              All time
-            </button>
-          </div>
-        </section>
-      </div>
-      <button
-        className="progress__button"
-        onClick={() => {
-          setAddWeight(true);
-          setNotification(false);
-        }}
-      >
-        + Add weight
-      </button>
+      {!error && (
+        <>
+          {" "}
+          <div className="chart-wrapper">
+            <section className="chart-container">
+              <LineGraph
+                weights={
+                  selectedPeriod === "last7days"
+                    ? pastWeekWeights
+                    : selectedPeriod === "last30days"
+                    ? past30daysWeights
+                    : allWeights
+                }
+                selectedPeriod={selectedPeriod}
+              />
+              <div className="chart-container__buttons">
+                <button
+                  className={`chart-container__button ${
+                    selectedPeriod === "last7days"
+                      ? "chart-container__button--active"
+                      : ""
+                  }`}
+                  onClick={() => handlePeriodChange("last7days")}
+                >
+                  Last 7 days
+                </button>
+                <button
+                  className={`chart-container__button ${
+                    selectedPeriod === "last30days"
+                      ? "chart-container__button--active"
+                      : ""
+                  }`}
+                  onClick={() => handlePeriodChange("last30days")}
+                >
+                  Last 30 days
+                </button>
+                <button
+                  className={`chart-container__button ${
+                    selectedPeriod === "alltime"
+                      ? "chart-container__button--active"
+                      : ""
+                  }`}
+                  onClick={() => handlePeriodChange("alltime")}
+                >
+                  All time
+                </button>
+              </div>
+            </section>
+          </div>{" "}
+          <button
+            className="progress__button"
+            onClick={() => {
+              setAddWeight(true);
+              setNotification(false);
+            }}
+          >
+            + Add weight
+          </button>
+        </>
+      )}
+
       {addWeight && (
         <AddWeight setAddWeight={setAddWeight} setTrySubmit={setTrySubmit} />
       )}

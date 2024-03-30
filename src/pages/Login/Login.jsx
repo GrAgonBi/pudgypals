@@ -27,7 +27,7 @@ function Login() {
       navigate("/user/progress");
     } catch (error) {
       // console.log(error);
-      setError(error.response.data);
+      error?.response && setError(error.response.data);
       setShakeMessage(true);
     }
   };
@@ -46,6 +46,8 @@ function Login() {
             name="email"
             type="text"
             label="Email"
+            required={true}
+            disable={false}
             className={`field__input${
               error
                 ? error.toLowerCase().includes("email")
@@ -58,6 +60,8 @@ function Login() {
             name="password"
             type="password"
             label="Password"
+            required={true}
+            disable={false}
             className={`field__input${
               error
                 ? error.toLowerCase().includes("password")

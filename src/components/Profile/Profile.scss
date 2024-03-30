@@ -1,0 +1,41 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.profile {
+  &__info-container {
+    margin-top: 1rem;
+  }
+
+  &__info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__info-title {
+    @include pageHeader;
+  }
+
+  &__info-item {
+    width: 49%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+    position: relative;
+  }
+
+  &__info-label {
+    margin-bottom: 0.25rem;
+  }
+
+  &__info-unit {
+    position: absolute;
+    top: 53%;
+    right: 10%;
+  }
+
+  &__button {
+    margin-top: 1rem;
+    width: 100%;
+  }
+}

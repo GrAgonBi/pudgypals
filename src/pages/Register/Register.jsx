@@ -46,6 +46,8 @@ function Register() {
             name="username"
             type="text"
             label="Username"
+            required={true}
+            disable={false}
             className={`field__input${
               error
                 ? error.toLowerCase().includes("username")
@@ -58,6 +60,8 @@ function Register() {
             name="email"
             type="text"
             label="Email"
+            required={true}
+            disable={false}
             className={`field__input${
               error
                 ? error.toLowerCase().includes("email")
@@ -70,6 +74,8 @@ function Register() {
             name="password"
             type="password"
             label="Password"
+            required={true}
+            disable={false}
             className={`field__input${
               error
                 ? error.toLowerCase().includes("password")

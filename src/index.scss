@@ -23,14 +23,13 @@ body {
   padding: 0 1.5rem;
   padding-bottom: 2rem;
   margin: 0 auto;
-
+  margin-top: 1rem;
   border: 1px solid $primary-dark;
-  box-shadow: 0 0.25rem 0.5rem rgba(89, 89, 89, 0.2);
+  // box-shadow: 0 0.25rem 0.5rem rgba(89, 89, 89, 0.2);
   border-radius: 0.5rem;
   color: $primary-dark;
   min-height: 35rem;
   position: relative;
-  overflow: hidden;
 }
 
 ul {

@@ -5,6 +5,9 @@
   display: flex;
   justify-content: space-between;
   margin-top: 2rem;
+  position: absolute;
+  width: 89%;
+  bottom: 4%;
 
   &__link {
     text-align: center;

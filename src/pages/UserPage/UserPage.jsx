@@ -24,7 +24,7 @@ function UserPage() {
     fetchUser();
   }, []);
   return (
-    <div>
+    <div className="userPage">
       <Header
         user={user}
         text={location.pathname.includes("profile") ? "profile" : "progress"}
