@@ -24,7 +24,7 @@ function InitialSetup() {
       await axios.get(`${baseUrl}/auth/account`, {
         headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` },
       });
-      // console.log(result.data);
+
       if (sessionStorage.getItem("initialWeight")) {
         setInitialWeight(sessionStorage.getItem("initialWeight"));
       }

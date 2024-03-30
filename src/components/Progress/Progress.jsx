@@ -9,12 +9,11 @@ import { getTodayDate } from "../../helper";
 import AddWeight from "../AddWeight/AddWeight";
 
 function Progress() {
-  // const [user, setUser] = useState(null);
   const [trySubmit, setTrySubmit] = useState(false);
   const [error, setError] = useState(false);
   const [allWeights, setAllWeights] = useState(null);
   const [past30daysWeights, setPast30daysWeights] = useState(null);
-  const [selectedPeriod, setSelectedPeriod] = useState("last7days");
+  const [selectedPeriod, setSelectedPeriod] = useState("alltime");
   const [pastWeekWeights, setPastWeekWeights] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [notification, setNotification] = useState(false);
@@ -162,7 +161,6 @@ function Progress() {
       </section>
       {!error && (
         <>
-          {" "}
           <div className="chart-wrapper">
             <section className="chart-container">
               <LineGraph
@@ -222,7 +220,15 @@ function Progress() {
       )}
 
       {addWeight && (
-        <AddWeight setAddWeight={setAddWeight} setTrySubmit={setTrySubmit} />
+        <AddWeight
+          setAddWeight={setAddWeight}
+          setTrySubmit={setTrySubmit}
+          record={
+            allWeights[allWeights.length - 1]?.date.includes(getTodayDate())
+              ? allWeights[allWeights.length - 1].weight
+              : 0
+          }
+        />
       )}
     </div>
   );

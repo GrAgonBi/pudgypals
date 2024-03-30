@@ -1,6 +1,6 @@
 import "./NumericInput.scss";
 
-function NumericInput({ value, setValue, label }) {
+function NumericInput({ value, setValue, label = "" }) {
   const handleIncrement = () => {
     setValue((prevValue) => prevValue + 1);
   };

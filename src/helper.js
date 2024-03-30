@@ -30,18 +30,16 @@ export function generateDateArray(weights) {
   // const targetLength = 7;
   const weightsLength = weights.length;
 
-  // 如果weights长度不超过7，则无需修改
   if (weightsLength <= 2) {
     return weights.map((entry) => entry.date);
   }
 
-  const middleIndex = Math.floor(weightsLength / 2); // 计算中间位置的索引
+  const middleIndex = Math.floor(weightsLength / 2);
 
-  // 构建修改后的日期数组
   const modifiedDateArray = [
-    weights[0].date, // 添加首个日期
-    weights[middleIndex].date, // 添加中间位置的日期
-    weights[weightsLength - 1].date, // 添加最后一个日期
+    weights[0].date,
+    weights[middleIndex].date,
+    weights[weightsLength - 1].date,
   ];
 
   return modifiedDateArray;

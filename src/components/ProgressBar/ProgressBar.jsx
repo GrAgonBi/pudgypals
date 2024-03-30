@@ -1,12 +1,19 @@
 import "./ProgressBar.scss";
 
-function ProgressBar() {
-  const progress = 10;
+function ProgressBar({ info }) {
+  const { weight, initial, target } = info;
+
+  const progress =
+    (initial - weight) / (initial - target) < 0
+      ? 0
+      : (initial - weight) / (initial - target) > 1
+      ? 1
+      : (initial - weight) / (initial - target);
+
   return (
     <div className="progressBar">
       <svg
         width="100%"
-        // height="auto"
         viewBox="0 0 200 100"
         className="progressBar__container"
         style={{ "--stroke-ratio": 1 }}
@@ -24,16 +31,18 @@ function ProgressBar() {
           r="90"
           fill="none"
           className="progressBar__progress-circle"
-          style={{ strokeDashoffset: (282.743 * progress) / 100 }}
+          style={{ strokeDashoffset: 282.743 * progress }}
         />
       </svg>
       <div className="progressBar__summary">
-        <h2 className="progressBar__title">133</h2>
-        <h2 className="progressBar__text">12lb left to achieve the goal</h2>
+        <h2 className="progressBar__title">{weight}</h2>
+        <h2 className="progressBar__text">
+          {Math.abs(weight - target)} lb left to achieve the goal
+        </h2>
       </div>
       <div className="progressBar__labels">
-        <h2 className="progressBar__label">140lb</h2>
-        <h2 className="progressBar__label">120lb</h2>
+        <h2 className="progressBar__label">{initial}lb</h2>
+        <h2 className="progressBar__label">{target}lb</h2>
       </div>
     </div>
   );

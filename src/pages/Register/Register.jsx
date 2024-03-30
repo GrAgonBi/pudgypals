@@ -27,7 +27,7 @@ function Register() {
       sessionStorage.setItem("token", response.data.token);
       navigate("/initialSetup");
     } catch (error) {
-      setError(error.response.data);
+      setError(error.response?.data);
       setShakeMessage(true);
     }
   };

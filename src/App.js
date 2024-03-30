@@ -20,7 +20,6 @@ function App() {
             <Route path="progress" element={<Progress />} />
             <Route path="profile" element={<Profile />} />
           </Route>
-          {/* <Route path="/addWeight" element={<AddWeight />} /> */}
           <Route path="/*" element={<Navigate to="/login" />} />
         </Routes>
       </BrowserRouter>

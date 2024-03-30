@@ -6,8 +6,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Modal from "../Modal/Modal";
 
-function AddWeight({ setAddWeight, setTrySubmit }) {
-  const [weight, setWeight] = useState(0);
+function AddWeight({ setAddWeight, setTrySubmit, record }) {
+  const [weight, setWeight] = useState(record);
   const [error, setError] = useState(null);
   const today = new Date();
 

@@ -14,7 +14,6 @@
   margin: 1rem 0;
 
   &__item {
-    // border: 1px solid $silver;
     box-shadow: 0 0.25rem 0.5rem rgba(89, 89, 89, 0.2);
     text-align: center;
     width: 6rem;
@@ -40,9 +39,6 @@
     margin: 0 0.25rem;
     display: flex;
     justify-content: space-between;
-
-    // margin-left: 3.75rem;
-    // margin-right: 0.45rem;
   }
 
   &__button {

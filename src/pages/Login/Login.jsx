@@ -26,7 +26,6 @@ function Login() {
       sessionStorage.setItem("token", response.data.token);
       navigate("/user/progress");
     } catch (error) {
-      // console.log(error);
       error?.response && setError(error.response.data);
       setShakeMessage(true);
     }

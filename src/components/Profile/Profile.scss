@@ -38,4 +38,13 @@
     margin-top: 1rem;
     width: 100%;
   }
+
+  &__goal {
+    text-align: center;
+  }
+
+  &__goal-title {
+    @include pageHeader;
+    margin-bottom: 1rem;
+  }
 }
