@@ -1,12 +1,25 @@
-# PudgyPals - proposal
+# PudgyPals
+
+**_PudgyPals is a straightforward app designed exclusively for tracking weight changes, simplifying the process of initiating weight-related goals for users._**
+
+## Preview
+
+![demo](./src/assets/proposal_assets/giphy.webp)
+
+A capstone project from [BrainStation's](https://brainstation.io/) Software Engineering Jan 2024 bootcamp cohort. The backend server can be found [here](https://github.com/GrAgonBi/pudgypals-api).
+
+## Deployment
+
+Access the pudgypals online via [PudgyPals](https://pudgypals.netlify.app)
+
+To browse the app, you can:
+
+- create your own account or
+- use our demo account
+  - email: user1@example.com
+  - password: user1
 
 ## Overview
-
-An app allows users to monitor their weight progress, set goals, and record daily weights, providing insights and trends over time
-
-![Video Title](./src/assets/proposal_assets/giphy.webp)
-
-<!-- <iframe src="https://giphy.com/embed/VqkRMmPxPlnhwYC7Ba" width="384" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/VqkRMmPxPlnhwYC7Ba">via GIPHY</a></p> -->
 
 ### Problem
 
