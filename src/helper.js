@@ -1,4 +1,4 @@
-export const baseUrl = "http://localhost:8080";
+export const baseUrl = process.env.REACT_APP_API_URL;
 
 export function formatWeekday(str) {
   const date = new Date(str);
