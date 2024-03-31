@@ -50,9 +50,40 @@ This app would include the following list of features:
 - **Goal setting:** users can set achievable weight loss goals whithin the app.
 - **Data visualization:** provide a clear visualization representation of weight changes over time.
 
-## Implementation
+# Installation
 
-### Tech Stack
+Follow these steps to run a local instance of PudgyPals:  
+(You'll need node, npm, and MySQL already installed.)
+
+## Set up the backend
+
+[Click here](https://github.com/GrAgonBi/pudgypals-api#Installation) to follow the instructions to setup the backend API server
+
+## setup the frontend
+
+1. Clone or download this repo
+2. Install client dependencies:
+   Run `npm install` from inside the client directory.
+   ```bash
+   $ cd ../client
+   $ npm install
+   ```
+3. Set environment variables:
+
+   Rename `.env_sample` to `.env` and change the placeholder value to the port you set for the server.
+
+   ```shell
+   REACT_APP_API_URL=http://localhost:<PORT SET IN /pudgypals-api/.env>
+   ```
+
+4. Start the React app:
+   ```bash
+   $ npm start
+   ```
+
+# Implementation
+
+## Tech Stack
 
 - React
 - MySQL
@@ -68,25 +99,25 @@ This app would include the following list of features:
   - express
   - bcrypt for password hashing
 
-### APIs
+## APIs
 
 - No external APIs will be used for the first sprint
 
-### Sitemap
+## Sitemap
 
 ![](src/assets/proposal_assets/sitemap.png)
 
-### Mockup Wireframes
+## Mockup Wireframes
 
 ![](src/assets/proposal_assets/mockups.png)
 
-### Data
+## Data
 
 ![](src/assets/proposal_assets/data.png)
 
-### Endpoints
+## Endpoints
 
-#### User Authentication
+### User Authentication
 
 Register User
 
@@ -125,7 +156,7 @@ Login User
 }
 ```
 
-#### Weight Records
+### Weight Records
 
 Add Weight Record
 
@@ -215,7 +246,7 @@ Get Last Thirty Days Weight Records
 ]
 ```
 
-#### User Profile
+### User Profile
 
 Create User Profile
 
@@ -270,7 +301,7 @@ Delete User Account
     - 204 No Content: User account deleted successfully.
     - 404 Not Found: User account not found.
 
-### Auth
+## Auth
 
 - JWT auth
   - Store JWT in sessionStorage, remove when a user logs out or account deleted
@@ -278,7 +309,7 @@ Delete User Account
 
 ## Roadmap
 
-### Sprint 1
+## Sprint 1
 
 - client
   - create react project with routes and boilerplate pages
@@ -289,7 +320,7 @@ Delete User Account
   - using knex, connect to database, create migrations and seeds with sample data
   - create all the endpoints and testing using postman/thunder client
 
-### Sprint 2
+## Sprint 2
 
 - client
   - complete Signin/Login Page, InitialRecord Page, Home/Progress Page, Profile Page
@@ -298,7 +329,7 @@ Delete User Account
 - server
   - add extra endpoints/HTTP methods if necessary
 
-### Sprint 3
+## Sprint 3
 
 - Testing and Deployment
 
