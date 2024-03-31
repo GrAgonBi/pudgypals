@@ -113,13 +113,13 @@ Follow these steps to run a local instance of PudgyPals:
 
 ## Data
 
-![](src/assets/proposal_assets/data.png)
+![](src/assets/proposal_assets/database.png)
 
 ## Endpoints
 
 ### User Authentication
 
-Register User
+#### Register User
 
 - Endpoint: `POST /api/auth/register`
 - Parameters:
@@ -138,7 +138,7 @@ Register User
 }
 ```
 
-Login User
+#### Login User
 
 - Endpoint: `POST /api/auth/login`
 - Parameters:
@@ -158,7 +158,7 @@ Login User
 
 ### Weight Records
 
-Add Weight Record
+#### Add Weight Record
 
 - Endpoint: `POST /api/weight/add`
 - Parameters:
@@ -175,7 +175,7 @@ Add Weight Record
 }
 ```
 
-Get All Weight Records
+#### Get All Weight Records
 
 - Endpoint: `GET /api/weight/all`
 - Response:
@@ -200,7 +200,7 @@ Get All Weight Records
 ]
 ```
 
-Get Last Seven Days Weight Records
+#### Get Last Seven Days Weight Records
 
 - Endpoint: `GET /api/weight/past7days`
 - Response:
@@ -223,7 +223,7 @@ Get Last Seven Days Weight Records
 ]
 ```
 
-Get Last Thirty Days Weight Records
+#### Get Last Thirty Days Weight Records
 
 - Endpoint: `GET /api/weight/past30days`
 - Response:
@@ -248,7 +248,7 @@ Get Last Thirty Days Weight Records
 
 ### User Profile
 
-Create User Profile
+#### Create User Profile
 
 - Endpoint: `POST /api/user`
   - `height` (decimal): height value.
@@ -261,7 +261,7 @@ Create User Profile
   - 201 Created: User profile created successfully.
   - 400 Bad Request: Invalid request parameters.
 
-Get User Profile
+#### Get User Profile
 
 - Endpoint: `GET /api/user`
 - Response:
@@ -282,7 +282,7 @@ Get User Profile
 }
 ```
 
-Update User Profile
+#### Update User Profile
 
 - Endpoint: `PUT /api/user`
 - Parameters:
@@ -293,7 +293,7 @@ Update User Profile
     - 204 No Content: User profile updated successfully.
     - 404 Not Found: User profile not found.
 
-Delete User Account
+#### Delete User Account
 
 - Endpoint: `DELETE /api/user`
 - Response:
@@ -331,7 +331,7 @@ Delete User Account
 
 ## Sprint 3
 
-- Testing and Deployment
+- Deployment
 
 ## Nice-to-haves
 
