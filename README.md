@@ -4,7 +4,9 @@
 
 An app allows users to monitor their weight progress, set goals, and record daily weights, providing insights and trends over time
 
-[Video Title](./src/assets/proposal_assets/demo.mp4)
+![Video Title](./src/assets/proposal_assets/giphy.webp)
+
+<!-- <iframe src="https://giphy.com/embed/VqkRMmPxPlnhwYC7Ba" width="384" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/VqkRMmPxPlnhwYC7Ba">via GIPHY</a></p> -->
 
 ### Problem
 
