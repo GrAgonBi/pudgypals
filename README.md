@@ -63,9 +63,8 @@ Follow these steps to run a local instance of PudgyPals:
 
 1. Clone or download this repo
 2. Install client dependencies:
-   Run `npm install` from inside the client directory.
+   Run `npm install` from inside the pudgypals directory.
    ```bash
-   $ cd ../client
    $ npm install
    ```
 3. Set environment variables:
