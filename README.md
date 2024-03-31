@@ -1,6 +1,6 @@
 # Project Title
 
-PudgyPals
+PudgyPals - proposal
 
 ## Overview
 
@@ -44,8 +44,8 @@ This app would include the following list of features:
 - Express
 - Client libraries:
   - react
-  - react-router
-  - react-datepicker
+  - react-router-dom
+  - react-calendar
   - react-Chartjs-2
   - axios
 - Server libraries:
