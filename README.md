@@ -1,6 +1,4 @@
-# Project Title
-
-PudgyPals - proposal
+# PudgyPals - proposal
 
 ## Overview
 
