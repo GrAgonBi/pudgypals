@@ -59,7 +59,7 @@ Follow these steps to run a local instance of PudgyPals:
 
 [Click here](https://github.com/GrAgonBi/pudgypals-api#Installation) to follow the instructions to setup the backend API server
 
-## setup the frontend
+## Set up the frontend
 
 1. Clone or download this repo
 2. Install client dependencies:
